@@ -1,0 +1,32 @@
+﻿@model E_ATMMVC.Models.AccountModel
+@{
+    ViewBag.Title = "Option";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Well back </h2>
+
+@using (@Html.BeginForm("BalanceCheck", "EATMAccount",new { cardNumber=Model.CardNumber }))
+{
+    <div class="form-group">
+        <button type="submit" class="btn-primary">Balance Check</button>
+    </div>
+}
+@using (@Html.BeginForm("CashWithdrawal", "EATMAccount", new { cardNumber = Model.CardNumber }))
+{
+    <div class="form-group">
+        <button type="submit" class="btn-primary">Cash Withdrawal</button>
+    </div>
+}
+@using (@Html.BeginForm("Option", "EATMAccount", new { cardNumber = Model.CardNumber }))
+{
+<div class="form-group">
+    <button type="submit" class="btn-primary">Return</button>
+</div>
+}
+@using (@Html.BeginForm("Logout", "EATMAccount", Model))
+{
+    <div class="form-group">
+        <button type="submit" class="btn-primary">Logout</button>
+    </div>
+}

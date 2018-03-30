@@ -1,0 +1,25 @@
+﻿@model E_ATMMVC.Models.AccountModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register as a new user</h2>
+
+@using (@Html.BeginForm())
+{
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.PinNumber, "Enter Pin Number:")
+        @Html.TextBoxFor(m => m.PinNumber, new { @class = "form-control" })
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.PinNumber, "Re-Enter Pin Number:")
+        @Html.TextBoxFor(m => m.PinNumber, new { @class = "form-control" })
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn-primary">Register</button>
+    </div>
+}
